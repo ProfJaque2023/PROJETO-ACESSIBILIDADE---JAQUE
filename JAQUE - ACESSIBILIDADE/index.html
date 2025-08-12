@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Professora Jaque – Aulas Gratuitas de Tear de Pregos</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --roxo-principal: #6f42c1;
+      --roxo-claro: #9d7aff;
+      --roxo-escuro: #4d2a9e;
+      --bege: #f8f5f2;
+      --cinza: #4a4a4a;
+    }
+    
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: var(--cinza);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    
+    header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .hero {
+      background: linear-gradient(rgba(111, 66, 193, 0.8), rgba(111, 66, 193, 0.9)), url('img/hero-background.jpg') no-repeat center/cover;
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    .hero .lead {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .btn-primary {
+      background-color: var(--roxo-principal);
+      border: none;
+      padding: 12px 24px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--roxo-escuro);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .btn-ponto {
+      margin: .5rem;
+      border-radius: 50px;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    .section-title:after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--roxo-principal);
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+    
+    #info-ponto {
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bege);
+      border: none !important;
+      border-radius: 8px;
+    }
+    
+    .gallery img {
+      transition: all 0.3s ease;
+      border-radius: 8px !important;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    footer {
+      background-color: var(--cinza);
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .social-icon {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      color: var(--roxo-claro);
+      transform: translateY(-3px);
+    }
+    
+    .nav-link {
+      color: var(--cinza);
+      font-weight: 600;
+      margin: 0 10px;
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--roxo-principal);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .nav-link:hover {
+      color: var(--roxo-principal);
+    }
+    
+    form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    input, textarea {
+      border-radius: 8px !important;
+      padding: 12px !important;
+      border: 1px solid #ddd !important;
+    }
+    
+    input:focus, textarea:focus {
+      border-color: var(--roxo-claro) !important;
+      box-shadow: 0 0 0 0.25rem rgba(111, 66, 193, 0.25) !important;
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 0;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero .lead {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="p-3">
+    <nav class="container d-flex justify-content-between align-items-center">
+      <h2 class="fw-bold m-0" style="color: var(--roxo-principal);">Professora Jaque</h2>
+      <ul class="nav d-none d-md-flex">
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+      <button class="btn btn-primary d-md-none">
+        <i class="bi bi-list"></i>
+      </button>
+    </nav>
+  </header>
+
+  <section id="sobre" class="hero">
+    <div class="container">
+      <h1 class="fw-bold">Aprenda Tear de Pregos com a Professora Jaque</h1>
+      <p class="lead">"Olá! Sou a Professora Jaque, movida por uma vontade imensa de ensinar com carinho e paixão. Adoro ver pessoas determinadas florescerem na arte do tear de pregos. Estou aqui para conduzir com amor e inspirar cada ponto com muita dedicação."</p>
+      <a href="#contato" class="btn btn-primary btn-lg mt-3">Quero Aprender!</a>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="container my-5 py-5">
+    <h2 class="section-title">Como Funciona</h2>
+    <p class="text-center mb-5">O tear de pregos é uma técnica artesanal simples e terapêutica. Veja os pontos que você aprenderá:</p>
+    <div class="text-center">
+      <button class="btn btn-primary btn-ponto" onclick="mostrarInfo('canelado')">Ponto Canelado</button>
+      <button class="btn btn-primary btn-ponto" onclick="mostrarInfo('ziguezague')">Ponto Zigue-zague</button>
+      <button class="btn btn-primary btn-ponto" onclick="mostrarInfo('barra-inglesa')">Barra Inglesa</button>
+      <button class="btn btn-primary btn-ponto" onclick="mostrarInfo('fantasia')">Tecido Fantasia</button>
+    </div>
+    <div id="info-ponto" class="mt-4 p-4">
+      <em class="text-center d-block">Escolha um ponto para saber mais.</em>
+    </div>
+    
+    <div class="row mt-5">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-heart-fill text-danger fs-1 mb-3"></i>
+            <h4>Aprenda com Amor</h4>
+            <p>Método didático e paciente para você aprender no seu ritmo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-people-fill text-primary fs-1 mb-3"></i>
+            <h4>Comunidade</h4>
+            <p>Participe do nosso grupo exclusivo para tirar dúvidas e compartilhar projetos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="bi bi-cash-coin text-success fs-1 mb-3"></i>
+            <h4>Totalmente Grátis</h4>
+            <p>Aulas gratuitas para você começar seu projeto hoje mesmo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="container-fluid my-5 py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">GALERIA DE IMAGENS DE PONTOS</h2>
+      <p class="text-center mb-5">Confira alguns dos trabalhos feitos por alunos e pela professora</p>
+      <div class="row gallery g-3">
+        <div class="col-md-6 col-lg-3">
+          <img src="IMG/PONTO CANELADO.png" alt="Cachecol ponto canelado" class="img-fluid rounded">
+          <div class="text-center mt-2">
+            <h5 class="mt-2">Ponto Canelado</h5>
+            <small class="text-muted">IMAGEM DO GOOGLE</small>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <img src="IMG/PONTO ZIGUE-ZAGUE .png" alt="Cachecol zigue-zague" class="img-fluid rounded">
+          <div class="text-center mt-2">
+            <h5 class="mt-2">Zigue-Zague</h5>
+            <small class="text-muted">IMAGEM DO GOOGLE</small>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <img src="IMG/PONTO PANAL.png" alt="Cachecol barra PANAL" class="img-fluid rounded">
+          <div class="text-center mt-2">
+            <h5 class="mt-2">Barra PANAL</h5>
+            <small class="text-muted">IMAGEM DO GOOGLE</small>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <img src="IMG/PONTO PERSA.png" alt="Cachecol PERSA" class="img-fluid rounded">
+          <div class="text-center mt-2">
+            <h5 class="mt-2">PERSA</h5>
+            <small class="text-muted">IMAGEM DO GOOGLE</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="container my-5 py-5">
+    <h2 class="section-title">Inscreva-se nas Aulas</h2>
+    <p class="text-center mb-5">Preencha o formulário abaixo para receber acesso às aulas gratuitas</p>
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <form id="form-contato">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" id="nome" class="form-control" placeholder="Seu nome completo" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="Seu e‑mail" required>
+          </div>
+          <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea id="mensagem" class="form-control" rows="4" placeholder="Conte um pouco sobre seu interesse no tear de pregos"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill mt-3">Quero me Inscrever</button>
+        </form>
+        <div id="thank-you" class="alert alert-success mt-3 d-none text-center">
+          <i class="bi bi-check-circle-fill me-2"></i> Obrigada por se inscrever! Entrarei em contato em breve com os detalhes das aulas.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center p-4">
+    <div class="container">
+      <h3 class="mb-4">Professora Jaque</h3>
+      <p class="mb-4">Aprenda a arte do tear de pregos de forma simples e divertida</p>
+      <div class="mb-4">
+        <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
+        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+      </div>
+      <p class="small text-muted m-0">© 2023 Professora Jaque - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    function mostrarInfo(tipo) {
+      const info = {
+        'canelado': 'O ponto canelado cria uma textura clássica, ideal para cachecóis elegantes. É perfeito para iniciantes e resulta em peças com ótimo caimento.',
+        'ziguezague': 'O ponto zigue-zague traz movimento e dinamismo às peças. Excelente para quem quer dar um toque moderno aos trabalhos.',
+        'barra-inglesa': 'A barra inglesa forma um desenho firme e sofisticado, ótimo para detalhes em cachecóis e outras peças.',
+        'fantasia': 'O tecido fantasia oferece visuais criativos e únicos a cada carreira, permitindo misturar cores e texturas.'
+      };
+      document.getElementById('info-ponto').innerHTML = `<p class="m-0 text-center">${info[tipo] || 'Escolha um ponto para ver sua descrição.'}</p>`;
+    }
+    
+    document.getElementById('form-contato').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('thank-you').classList.remove('d-none');
+      this.reset();
+      setTimeout(() => {
+        document.getElementById('thank-you').classList.add('d-none');
+      }, 5000);
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
